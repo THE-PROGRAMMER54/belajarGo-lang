@@ -1,0 +1,77 @@
+Next Step
+Kalau kamu setuju, kita bisa bikin rute belajar mingguan, misalnya:
+
+Hari 1: Dasar Golang — print, variabel, input | selesai
+Hari 2: Tipe data, operator, if-else | selesai
+Hari 3: Perulangan, fungsi | selesai
+Hari 4: Array, slice, map | selesai
+Hari 5: Struct & pointer | selesai
+Hari 6: CRUD sederhana (tanpa database dulu) | selesai
+Hari 7: CRUD lengkap (pakai map) | proccess
+
+
+Hari 1 — Pengenalan Web API
+Apa itu API (dan RESTful API)
+
+Package net/http
+
+Buat server sederhana: Hello World API
+
+http.HandleFunc() dan http.ListenAndServe()
+
+Hari 2 — Endpoint & Routing
+Buat beberapa endpoint (/mahasiswa, /about)
+
+Baca URL, query param, path param
+
+Kirim response dalam bentuk JSON (application/json)
+
+Gunakan struct + encoding/json
+
+Hari 3 — CRUD API Sederhana (tanpa database)
+Simpan data di map/slice di memory
+
+Endpoint:
+
+GET /mahasiswa → semua
+
+POST /mahasiswa → tambah
+
+PUT /mahasiswa/{id} → update
+
+DELETE /mahasiswa/{id} → hapus
+
+Hari 4 — Validasi & Error Handling
+Validasi input JSON
+
+Menangani error: 400 Bad Request, 404 Not Found, 500 Internal Server Error
+
+Kirim pesan error dalam format JSON
+
+Hari 5 — Framework ringan: Echo atau Gin
+Kenalan dengan framework: install & setup
+
+Rewrite CRUD API dengan Echo / Gin
+
+Router lebih fleksibel dan bersih
+
+Hari 6 — Simpan ke File JSON
+Simpan data ke file .json → SaveData(), LoadData()
+
+Program tetap bisa jalan meski ditutup (seperti mini database)
+
+Hari 7 — Mini Project: API Data Mahasiswa
+Gabungkan semua:
+
+Gunakan Echo / Gin
+
+CRUD Mahasiswa + validasi
+
+Simpan/load ke file .json
+
+Bisa request pakai Postman / curl
+
+💡 Syarat sebelum mulai:
+✅ Sudah ngerti: struct, map, slice
+✅ Paham fungsi & input
+✅ Mau belajar JSON, http, dan sedikit status code
