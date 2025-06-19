@@ -103,14 +103,82 @@ func tampilkanData() {
 	}
 
 	for nim, mhs := range dataMahasiswa {
-		fmt.Printf("NIM: %d | Nama: %s | Umur: %d | Nilai: %.1f\n", nim, mhs.Nama, mhs.Umur, mhs.Nilai)
+		fmt.Printf("NIM: %d | Nama: %s | Alamat: %s | Umur: %d | Nilai: %.1f\n", nim, mhs.Nama, mhs.Alamat, mhs.Umur, mhs.Nilai)
 	}
 }
 
 func ubahData() {
+	fmt.Println("\n ===Daftar Mahasiswa===")
+	if len(dataMahasiswa) == 0 {
+		fmt.Println("Belum ada Mahasiswa.")
+		return
+	}
 
+	for nim, mhs := range dataMahasiswa {
+		fmt.Printf("NIM: %d | Nama: %s | Alamat: %s | Umur: %d | Nilai: %.1f\n", nim, mhs.Nama, mhs.Alamat, mhs.Umur, mhs.Nilai)
+	}
+
+	nimstr := input("Masukan Nim Yang Ingin Diubah:")
+	nim, err := strconv.Atoi(nimstr)
+
+	if err != nil {
+		fmt.Println("⚠️  NIM harus berupa angka.")
+		return
+	}
+
+	mhs, exists := dataMahasiswa[nim]
+	if !exists {
+		fmt.Println("⚠️  Data tidak ditemukan.")
+		return
+	}
+
+	nama := input("Masukan Nama Anda:")
+	alamat := input("Masukan Alamat Anda:")
+	umurStr := input("Masukan Umur Anda:")
+	nilaiStr := input("Masukan Nilai Anda:")
+
+	umur, err1 := strconv.Atoi(umurStr)
+	nilai, err2 := strconv.ParseFloat(nilaiStr, 64)
+
+	if err1 != nil || err2 != nil {
+		fmt.Println("⚠️  Umur dan nilai harus berupa angka.")
+		return
+	}
+
+	mhs.Nama = nama
+	mhs.Umur = umur
+	mhs.Alamat = alamat
+	mhs.Nilai = nilai
+	dataMahasiswa[nim] = mhs
+
+	fmt.Println("✅ Data berhasil diubah.")
 }
 
 func hapusData() {
+	fmt.Println("\n ===Daftar Mahasiswa===")
+	if len(dataMahasiswa) == 0 {
+		fmt.Println("Belum ada Mahasiswa.")
+		return
+	}
 
+	for nim, mhs := range dataMahasiswa {
+		fmt.Printf("NIM: %d | Nama: %s | Alamat: %s | Umur: %d | Nilai: %.1f\n", nim, mhs.Nama, mhs.Alamat, mhs.Umur, mhs.Nilai)
+	}
+
+	nimstr := input("Masukan Nim Yang Ingin Dihapus:")
+	nim, err := strconv.Atoi(nimstr)
+
+	if err != nil {
+		fmt.Println("⚠️  NIM harus berupa angka.")
+		return
+	}
+
+	_, exists := dataMahasiswa[nim]
+	if !exists {
+		fmt.Println("⚠️  Data tidak ditemukan.")
+		return
+	}
+
+	delete(dataMahasiswa, nim)
+	fmt.Println("✅ Data berhasil dihapus.")
 }
