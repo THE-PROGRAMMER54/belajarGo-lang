@@ -1,0 +1,11 @@
+Next Step
+Kalau kamu setuju, kita bisa bikin rute belajar mingguan, misalnya:
+
+Hari 1: Dasar Golang — print, variabel, input | selesai
+Hari 2: Tipe data, operator, if-else | selesai
+Hari 3: Perulangan, fungsi | selesai
+Hari 4: Array, slice, map | selesai
+Hari 5: Struct & pointer | selesai
+Hari 6: CRUD sederhana (tanpa database dulu) | selesai
+Hari 7: CRUD lengkap (pakai map) | selesai
+
